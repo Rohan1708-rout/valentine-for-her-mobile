@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Bhutu ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+html,body{
+width:100%;
+overflow-x:hidden;
+font-family:'Segoe UI',sans-serif;
+background:black;
+color:white;
+}
+
+/* ================= PASSWORD SCREEN ================= */
+
+#passwordScreen{
+position:fixed;
+width:100%;
+height:100vh;
+background:url('11.jpeg') center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:99999;
+padding:20px;
+}
+
+#passwordScreen::before{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.75);
+}
+
+#passwordBox{
+position:relative;
+z-index:2;
+text-align:center;
+width:100%;
+max-width:350px;
+}
+
+#passwordBox h2{
+font-size:22px;
+margin-bottom:15px;
+}
+
+input{
+width:100%;
+padding:14px;
+border-radius:30px;
+border:none;
+outline:none;
+font-size:16px;
+text-align:center;
+}
+
+button{
+padding:14px 25px;
+border:none;
+border-radius:30px;
+background:#ff4d6d;
+color:white;
+cursor:pointer;
+margin-top:15px;
+font-size:16px;
+transition:0.3s;
+}
+
+button:active{
+transform:scale(1.1);
+}
+
+#wrongPass{
+margin-top:10px;
+color:#ff99ac;
+}
+
+/* ================= MAIN ================= */
+
+#mainContent{
+display:none;
+}
+
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:40px 20px;
+position:relative;
+background-size:cover;
+background-position:center;
+background-attachment:scroll;
+}
+
+section::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.65);
+z-index:0;
+}
+
+section *{
+position:relative;
+z-index:2;
+}
+
+.glow{
+font-size:32px;
+animation:glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow{
+from{ text-shadow:0 0 10px #ff4d6d;}
+to{ text-shadow:0 0 25px #ff99ac;}
+}
+
+/* ================= CAROUSEL ================= */
+
+.carousel{
+overflow:hidden;
+width:100%;
+margin-top:30px;
+}
+
+.carousel-track{
+display:flex;
+animation:scroll 30s linear infinite;
+}
+
+.carousel img{
+width:160px;
+height:220px;
+object-fit:cover;
+border-radius:15px;
+margin-right:10px;
+}
+
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
+
+/* ================= SHAKE ================= */
+
+@keyframes shake{
+0%{transform:translateX(0);}
+25%{transform:translateX(-6px);}
+50%{transform:translateX(6px);}
+75%{transform:translateX(-6px);}
+100%{transform:translateX(0);}
+}
+
+.shake{
+animation:shake 0.4s;
+}
+
+/* ================= RIDDLE ================= */
+
+#riddleSection button{
+width:100%;
+max-width:300px;
+margin:8px 0;
+}
+
+/* ================= KISS EXPLOSION ================= */
+
+.kiss{
+position:fixed;
+font-size:42px;
+animation:explode 2s ease-out forwards;
+z-index:9999;
+}
+
+@keyframes explode{
+0%{transform:scale(0.5);opacity:1;}
+100%{
+transform:translate(var(--x),var(--y)) scale(2);
+opacity:0;
+}
+}
+
+/* ================= PETALS ================= */
+
+.petal{
+position:fixed;
+top:-10px;
+font-size:20px;
+animation:fall linear forwards;
+z-index:9999;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
+}
+}
+
+#noMessage{
+margin-top:20px;
+font-size:18px;
+color:#ffb3c1;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD -->
+<div id="passwordScreen">
+<div id="passwordBox">
+<h2>Enter Our Secret Code 💌</h2>
+<input type="password" id="passwordInput" placeholder="Enter password">
+<button onclick="checkPassword()">Unlock ❤️</button>
+<div id="wrongPass"></div>
+</div>
+</div>
+
+<!-- MAIN -->
+<div id="mainContent">
+
+<section style="background-image:url('8.jpeg');">
+<h1 class="glow">Bhutu ❤️</h1>
+<p>From 15… to forever.</p>
+<button onclick="start()">Begin Our Story</button>
+</section>
+
+<section style="background-image:url('13.jpeg');">
+<h2>Our Memories</h2>
+
+<div class="carousel">
+<div class="carousel-track">
+
+<!-- 24 images duplicated -->
+<img src="1.jpeg"><img src="2.jpeg"><img src="3.jpeg">
+<img src="4.jpeg"><img src="5.jpeg"><img src="6.jpeg">
+<img src="7.jpeg"><img src="8.jpeg"><img src="9.jpeg">
+<img src="10.jpeg"><img src="11.jpeg"><img src="12.jpeg">
+<img src="13.jpeg"><img src="14.jpeg"><img src="15.jpeg">
+<img src="16.jpeg"><img src="17.jpeg"><img src="18.jpeg">
+<img src="19.jpeg"><img src="20.jpeg"><img src="21.jpeg">
+<img src="22.jpeg"><img src="23.jpeg"><img src="24.jpeg">
+
+<img src="1.jpeg"><img src="2.jpeg"><img src="3.jpeg">
+<img src="4.jpeg"><img src="5.jpeg"><img src="6.jpeg">
+<img src="7.jpeg"><img src="8.jpeg"><img src="9.jpeg">
+<img src="10.jpeg"><img src="11.jpeg"><img src="12.jpeg">
+<img src="13.jpeg"><img src="14.jpeg"><img src="15.jpeg">
+<img src="16.jpeg"><img src="17.jpeg"><img src="18.jpeg">
+<img src="19.jpeg"><img src="20.jpeg"><img src="21.jpeg">
+<img src="22.jpeg"><img src="23.jpeg"><img src="24.jpeg">
+
+</div>
+</div>
+</section>
+
+<section style="background-image:url('18.jpeg');">
+<h2>Will You Be My Valentine?</h2>
+<button id="yesBtn" onclick="yesClicked()">YES ❤️</button>
+<button id="noBtn" onclick="noClicked()">NO 🙈</button>
+<div id="noMessage"></div>
+</section>
+
+<section id="riddleSection" style="background-image:url('26.jpeg'); display:none;">
+<h2>Before Forever… One Small Challenge 😌</h2>
+<p id="questionText"></p>
+<div id="options"></div>
+<div id="meter"></div>
+</section>
+
+<section id="finalSection" style="background-image:url('25.jpeg'); display:none;">
+<h2>Forever With You 💍</h2>
+<p>
+You were my first love at 15.<br>
+You are my greatest love now.<br>
+And you will always be my future.
+</p>
+</section>
+
+</div>
+
+<audio id="music" loop>
+<source src="manchala.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+/* PASSWORD */
+const correctPassword = "iloveyou";
+
+function checkPassword(){
+let input = document.getElementById("passwordInput").value.trim();
+
+if(input === correctPassword){
+document.getElementById("passwordScreen").style.display="none";
+document.getElementById("mainContent").style.display="block";
+}else{
+document.getElementById("wrongPass").innerText="Wrong password 😌";
+}
+}
+
+/* START */
+function start(){
+document.getElementById("music").play();
+window.scrollTo({top:window.innerHeight,behavior:'smooth'});
+}
+
+/* NO BUTTON */
+function noClicked(){
+document.getElementById("noMessage").innerText=
+"No, is not an option for you babbyy 😌";
+yesBtn.style.transform="scale(1.6)";
+noBtn.style.transform="scale(0.6)";
+}
+
+/* RIDDLES */
+let currentRiddle=0;
+
+const riddles=[
+{question:"Who loved you first when we were 15? 😌",
+answers:["Some random guy","Rohan ❤️","Destiny"],
+correct:1},
+{question:"Where was our unforgettable surprise memory? 💖",
+answers:["At my home","In a cafe","On a trip"],
+correct:0},
+{question:"Who will choose you in every lifetime? 🌍",
+answers:["Time","Fate","Me ❤️"],
+correct:2}
+];
+
+function yesClicked(){
+document.getElementById("riddleSection").style.display="flex";
+document.getElementById("riddleSection")
+.scrollIntoView({behavior:'smooth'});
+showRiddle();
+}
+
+function showRiddle(){
+let r=riddles[currentRiddle];
+questionText.innerText=r.question;
+meter.innerText="Soulmate Level: "+currentRiddle+" / 3 💘";
+options.innerHTML="";
+
+r.answers.forEach((answer,index)=>{
+let btn=document.createElement("button");
+btn.innerText=answer;
+
+btn.onclick=function(){
+if(index===r.correct){
+currentRiddle++;
+if(currentRiddle<riddles.length){
+showRiddle();
+}else{
+finalReveal();
+}
+}else{
+btn.classList.add("shake");
+setTimeout(()=>btn.classList.remove("shake"),400);
+}
+};
+
+options.appendChild(btn);
+});
+}
+
+function finalReveal(){
+
+for(let i=0;i<180;i++){
+let kiss=document.createElement("div");
+kiss.className="kiss";
+kiss.innerHTML="💋";
+kiss.style.left="50%";
+kiss.style.top="50%";
+kiss.style.setProperty('--x',(Math.random()*2000-1000)+"px");
+kiss.style.setProperty('--y',(Math.random()*2000-1000)+"px");
+document.body.appendChild(kiss);
+setTimeout(()=>kiss.remove(),2000);
+}
+
+for(let i=0;i<50;i++){
+let petal=document.createElement("div");
+petal.className="petal";
+petal.innerHTML="🌹";
+petal.style.left=Math.random()*100+"vw";
+petal.style.animationDuration=(4+Math.random()*4)+"s";
+document.body.appendChild(petal);
+setTimeout(()=>petal.remove(),6000);
+}
+
+setTimeout(()=>{
+finalSection.style.display="flex";
+finalSection.scrollIntoView({behavior:'smooth'});
+},1500);
+}
+
+</script>
+
+</body>
+</html>
